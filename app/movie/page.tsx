@@ -1,4 +1,4 @@
-export default function Movies() {
+export default function Movie() {
     return (
       <main className='text-white'>
         <h1>Hello there!</h1>
