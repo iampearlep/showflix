@@ -8,14 +8,14 @@
 const Navbar = () => {
   const [nav, setNav] = React.useState(false);
   return (
-    <nav className="mx-auto container px-5 lg:px-10 py-5 z-50">
+    <nav className="bg-transparent mx-auto text-white relative container px-5 lg:px-10 py-5 z-50">
       <div className="justify-between items-center hidden lg:flex">
         <div className="flex items-center  justify-between">
-          <Link href="/" className="text-3xl text-white font-bold">
-           SHOWFLIX
+          <Link href="/" className="text-3xl font-bold">
+           SHOWFLIX.
           </Link>
         </div>
-        <ul className="flex items-center justify-between space-x-10 text-white cursor-pointer">
+        <ul className="w-7/12 flex items-center justify-between space-x-10  cursor-pointer">
           <li>
             <Link href="/" className="flex items-center">
               Home
@@ -36,18 +36,17 @@ const Navbar = () => {
                Upcoming
             </Link>
           </li>
-          <li>
-            <Link href="/movie/search" className="flex items-center">
-            <MdSearch />
-            </Link>
-          </li>
+          <div className="relative flex flex-row w-4/12 max-w-sm items-center justify-end gap-1.5">
+            <MdSearch className='absolute text-black' />
+            <input type="text" placeholder="Search" className="px-2 rounded-sm"/>
+          </div>
         </ul>
       </div>
 
       {/* mobile */}
       <div className="lg:hidden flex justify-between items-center">
         <Link href="/" className="text-3xl font-bold text-white">
-         SHOWFLIX
+         SHOWFLIX.
         </Link>
         <ul
           onClick={() => setNav(!nav)}

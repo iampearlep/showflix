@@ -1,10 +1,10 @@
 import Image from 'next/image'
+import Header from '@/components/Header'
 
 export default function Home() {
   return (
     <main className='text-white'>
-      <h1>Hello there!</h1>
-      <p>Welcome to SHOWFLIX</p>
+      <Header />
     </main>
   )
 }
