@@ -8,14 +8,14 @@
 const Navbar = () => {
   const [nav, setNav] = React.useState(false);
   return (
-    <nav className="bg-transparent mx-auto text-white relative container px-5 lg:px-10 py-5 z-50">
-      <div className="justify-between items-center hidden lg:flex">
+    <nav className=" mx-auto text-white relative container px-5 lg:px-10 py-5 z-50">
+      <div className="w-full bg-transparent justify-between items-center hidden lg:flex">
         <div className="flex items-center  justify-between">
           <Link href="/" className="text-3xl font-bold">
            SHOWFLIX.
           </Link>
         </div>
-        <ul className="w-7/12 flex items-center justify-between space-x-10  cursor-pointer">
+        <ul className="w-8/12 flex items-center justify-between space-x-10  cursor-pointer">
           <li>
             <Link href="/" className="flex items-center">
               Home
@@ -45,16 +45,16 @@ const Navbar = () => {
 
       {/* mobile */}
       <div className="lg:hidden flex justify-between items-center">
-        <Link href="/" className="text-3xl font-bold text-white">
+        <Link href="/" className="text-2xl font-bold text-white">
          SHOWFLIX.
         </Link>
         <ul
           onClick={() => setNav(!nav)}
-          className={`absolute top-[74px] z-20 items-center w-full left-0 py-10 bg-black text-white h-full ${
+          className={`absolute top-[74px] z-20 bg-black items-center w-full left-0 py-10 bg-red text-white h-full ${
             nav ? "block" : "hidden"
           }`}
         >
-          <div className="flex flex-col h-96 text-lg  items-center justify-between">
+          <div className="flex flex-col h-96 bg-black text-lg items-center justify-between">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -67,14 +67,14 @@ const Navbar = () => {
               Tv Shows
               </Link>
             </li>
-            <li className="cursor-pointer bg-white text-black p-2 w-32 flex items-center justify-center rounded-full">
+            <li className="cursor-pointer bg-white text-black p-2 w-32 flex items-center justify-center rounded-full mb-10">
               <Link href="/movie/upcoming" className="flex items-center">
               Upcoming
               </Link>
             </li>
           </div>
         </ul>
-        <div className="lg:hidden text-white block text-3xl" onClick={() => setNav(!nav)}>
+        <div className="lg:hidden text-white bg-black block text-2xl" onClick={() => setNav(!nav)}>
           {!nav ? <CiMenuBurger /> : <TfiClose />}
         </div>
       </div>
