@@ -1,11 +1,15 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from "next/link";
-const Card = () => {
+interface Movie {
+  title: string;
+  poster_path: string;
+}
+const Card:React.FC<{ movie: Movie }> = ({ movie }) => {
   return (
     <Link href='/' className=''>
-       <Image src={'https://image.tmdb.org/t/p/w1280/vBZ0qvaRxqEhZwl6LWmruJqWE8Z.jpg'} height={750} width={500} priority={true} layout="responsive" alt='' className=''/>
-       <h4>The Creator</h4>
+       <Image src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`} height={750} width={500} priority={true} layout="responsive" alt='' className=''/>
+       <h4>{movie.title}</h4>
     </Link>
   )
 }
