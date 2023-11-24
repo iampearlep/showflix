@@ -2,12 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import axios from 'axios'
-interface Movie {
-  id: number;
-  title: string;
-  poster_path: string;
-  overview: string;
-}
+import { Movie } from '@/types/type'
+
 const Header = () => {
   const [movies, setMovies] = useState<Movie[]>([])
   const [randomMovie, setRandomMovie] = useState<Movie | null>(null);
