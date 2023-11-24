@@ -1,10 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from "next/link";
-interface Movie {
-  title: string;
-  poster_path: string;
-}
+import { Movie } from '@/types/type'
+
 const Card:React.FC<{ movie: Movie }> = ({ movie }) => {
   return (
     <Link href='/' className=''>

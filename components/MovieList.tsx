@@ -2,11 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import Card from './Card'
 import axios from 'axios'
-interface Movie {
-  id: number;
-  title: string;
-  poster_path: string;
-}
+import { Movie } from '@/types/type'
+
 const MovieList = () => {
   
     const [movies, setMovies] = useState<Movie[]>([])
