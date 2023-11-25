@@ -1,5 +1,5 @@
 import Header from '@/components/Header'
-import NowPlaying from '@/components/nowPlaying'
+import NowPlaying from '@/components/NowPlaying'
 import Popular from '@/components/Popular'
 import Action from '@/components/Action'
 import Comedy from '@/components/Comedy'
