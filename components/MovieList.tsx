@@ -13,10 +13,28 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
   return (
     <div>
       <Swiper
-       spaceBetween={50}
-       slidesPerView={6}
-       onSlideChange={() => console.log('slide change')}
-       onSwiper={(swiper) => console.log(swiper)}
+      breakpoints={{
+        200: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        300: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        600: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+        700: {
+          slidesPerView: 5,
+          spaceBetween: 20,
+        },
+        900: {
+          slidesPerView: 6,
+          spaceBetween: 20,
+        },
+      }}
       >
         {movies.map((movie: Movie) => (
           <SwiperSlide key={movie.id}>
