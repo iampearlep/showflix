@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { getTrending } from '@/api/api'
+import { getNowPlaying, getTrending } from '@/api/api'
 import { Movie } from '@/types/type'
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
   useEffect(() => {
     const getMovies = async () => {
       try{
-        const response = await getTrending()
+        const response = await getNowPlaying()
         setMovies(response)
         const randomIndex = Math.floor(Math.random() * response.length);
         setRandomMovie(response[randomIndex]);
@@ -23,10 +23,10 @@ const Header = () => {
 },[])
   return (
     <header>
-      <div className='w-full -mt-[80px] md:-mt-[200px] md:h-[750px] overflow-y-hidden'>
+      <div className='w-full -mt-[80px] md:-mt-[130px] md:h-[750px] overflow-y-hidden'>
       <Image src={`https://image.tmdb.org/t/p/w1280/${randomMovie?.backdrop_path}`} height={439} width={1280} priority={true} layout="responsive" alt='' className='brightness-50'/>
       </div>
-      <div className='z-10 text-white absolute -mt-[380px] md:w-1/2 px-10'>
+      <div className='z-10 text-white absolute -mt-[450px] md:w-1/2 px-10'>
      <h1 className='text-3xl font-bold'>{randomMovie?.title}</h1>
       <p className='py-4'>{randomMovie?.overview}</p>
         <div className='flex flex-row gap-x-5'>
