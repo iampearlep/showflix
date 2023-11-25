@@ -4,4 +4,5 @@ export interface Movie {
     poster_path: string;
     overview: string;
     backdrop_path: string;
+    name: string;
   }

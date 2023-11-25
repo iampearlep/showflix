@@ -28,4 +28,23 @@ export const getAction = async () => {
     const response = await axios.get(ACTION_URL);
     return response.data.results;
   };
-  
+  export const getComedy = async () => {
+    const response = await axios.get(COMEDY_URL);
+    return response.data.results;
+  };  
+  export const getRomance = async () => {
+    const response = await axios.get(ROMANCE_URL);
+    return response.data.results;
+  };  
+  export const getAnime = async () => {
+    const response = await axios.get(ANIME_URL);
+    return response.data.results;
+  };  
+  export const getTvShows = async () => {
+    const response = await axios.get(TV_SHOWS_URL);
+    return response.data.results;
+  };  
+  export const getHorror = async () => {
+    const response = await axios.get(HORROR_URL);
+    return response.data.results;
+  };  
