@@ -24,3 +24,8 @@ export const getTrending = async () => {
     const response = await axios.get(TRENDING_URL);
     return response.data.results;
   };
+export const getAction = async () => {
+    const response = await axios.get(ACTION_URL);
+    return response.data.results;
+  };
+  
