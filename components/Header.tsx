@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <header>
       <div className='w-full -mt-[80px] md:-mt-[130px] md:h-[750px] overflow-y-hidden'>
-      <Image src={`https://image.tmdb.org/t/p/w1280/${randomMovie?.backdrop_path}`} height={439} width={1280} priority={true} layout="responsive" alt='' className='brightness-50'/>
+      <Image src={`https://image.tmdb.org/t/p/w1280/${randomMovie?.backdrop_path}`} height={439} width={1280} priority={true} alt='' className='w-full bg-cover object-cover brightness-50'/>
       </div>
       <div className='z-10 text-white absolute -mt-[450px] md:w-1/2 px-10'>
      <h1 className='text-3xl font-bold'>{randomMovie?.title}</h1>

@@ -1,6 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import MovieList from './MovieList'
+import MovieList from './ui/MovieList'
 import { getNowPlaying } from '@/api/api'
 import { Movie } from '@/types/type'
 
