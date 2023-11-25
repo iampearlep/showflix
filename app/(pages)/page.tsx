@@ -1,10 +1,10 @@
 import Header from '@/components/Header'
-import MovieList from '@/components/MovieList'
+import NowPlaying from '@/components/nowPlaying'
 export default function Home() {
   return (
     <main className='text-white'>
       <Header />
-      <MovieList />
+      <NowPlaying />
     </main>
   )
 }

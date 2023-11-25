@@ -12,3 +12,11 @@ const ANIME_URL = `${process.env.NEXT_PUBLIC_ACTION_BASE_URL}?api_key=${process.
 
 
 
+export const getNowPlaying = async () => {
+    const response = await axios.get(NOW_PLAYING_URL);
+    return response.data.results;
+  };
+export const getPopular = async () => {
+    const response = await axios.get(POPULAR_URL);
+    return response.data.results;
+  };
