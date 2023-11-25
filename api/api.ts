@@ -20,3 +20,7 @@ export const getPopular = async () => {
     const response = await axios.get(POPULAR_URL);
     return response.data.results;
   };
+  export const getTrending = async () => {
+    const response = await axios.get(TRENDING_URL);
+    return response.data.results;
+  };

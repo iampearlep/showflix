@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import axios from 'axios'
+import { getTrending } from '@/api/api'
 import { Movie } from '@/types/type'
 
 const Header = () => {
@@ -11,10 +11,10 @@ const Header = () => {
   useEffect(() => {
     const getMovies = async () => {
       try{
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_POPULAR_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`)
-        setMovies(response.data.results)
-        const randomIndex = Math.floor(Math.random() * response.data.results.length);
-        setRandomMovie(response.data.results[randomIndex]);
+        const response = await getTrending()
+        setMovies(response)
+        const randomIndex = Math.floor(Math.random() * response.length);
+        setRandomMovie(response[randomIndex]);
       } catch(err){
         console.error(err)
       }
