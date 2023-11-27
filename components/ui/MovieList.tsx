@@ -4,7 +4,8 @@ import Card from './Card'
 import { Movie } from '@/types/type'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/navigation";
+import { Mousewheel, Keyboard } from 'swiper/modules';
+
 interface MovieListProps {
   movies: Movie[];
 }
@@ -13,6 +14,10 @@ const MovieList: React.FC<MovieListProps> = ({ movies }) => {
   return (
     <div>
       <Swiper
+      cssMode={true}
+      mousewheel={true}
+      keyboard={true}
+      modules={[ Mousewheel, Keyboard]}
       breakpoints={{
         200: {
           slidesPerView: 2,
