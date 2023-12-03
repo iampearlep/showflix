@@ -9,7 +9,7 @@ const COMEDY_URL = `${process.env.NEXT_PUBLIC_ACTION_BASE_URL}?api_key=${process
 const HORROR_URL = `${process.env.NEXT_PUBLIC_ACTION_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=27`
 const ROMANCE_URL = `${process.env.NEXT_PUBLIC_ACTION_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=10749`
 const ANIME_URL = `${process.env.NEXT_PUBLIC_ACTION_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=16`
-
+const UPCOMING_URL = `${process.env.NEXT_PUBLIC_UPCOMING_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
 
 
 export const getNowPlaying = async () => {
@@ -48,3 +48,7 @@ export const getAction = async () => {
     const response = await axios.get(HORROR_URL);
     return response.data.results;
   };  
+  export const getUpcoming = async () => {
+    const response = await axios.get(UPCOMING_URL);
+    return response.data.results;
+  }; 
