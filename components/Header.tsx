@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { getNowPlaying, getTrending } from '@/api/api'
+import { getNowPlaying } from '@/api/api'
 import { Movie } from '@/types/type'
 
 const Header = () => {
