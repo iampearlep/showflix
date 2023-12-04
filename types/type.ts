@@ -5,4 +5,6 @@ export interface Movie {
     overview: string;
     backdrop_path: string;
     name: string;
+    release_date: string;
+    status: string;
   }
