@@ -18,7 +18,7 @@ export default function Home() {
       <Romance/>
       <Anime />
       <Horror />
-      <TvShows />
+      {/* <TvShows /> */}
     </main>
   )
 }
