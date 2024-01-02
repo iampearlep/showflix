@@ -1,84 +1,82 @@
-"use client"
- import React from "react";
- import Link from "next/link";
- import { CiMenuBurger } from "react-icons/ci";
- import { TfiClose } from "react-icons/tfi";
- import { MdSearch } from "react-icons/md";
+"use client";
+import React from "react";
+import { useState } from "react";
+import { IoMenuOutline, IoCloseSharp } from "react-icons/io5";
+import Link from "next/link";
+import { MdSearch } from "react-icons/md";
 
 const Navbar = () => {
-  const [nav, setNav] = React.useState(false);
+  const [isToggle, setIsToggle] = useState(false);
+  const handleToggle = () => {
+    setIsToggle(!isToggle);
+  };
   return (
-    <nav className=" mx-auto text-white relative container px-5 lg:px-10 py-5 z-50">
-      <div className="w-full bg-transparent justify-between items-center hidden lg:flex">
-        <div className="flex items-center  justify-between">
-          <Link href="/" className="text-3xl font-bold">
-           SHOWFLIX.
-          </Link>
-        </div>
-        <ul className="w-8/12 flex items-center justify-between space-x-10  cursor-pointer">
-          <li>
-            <Link href="/" className="flex items-center">
+    <div className="w-full">
+      <div className="w-full mx-auto absolute z-50 flex justify-between px-5 lg:px-10 py-5">
+        <div className="flex mx-auto items-center justify-between text-white w-11/12">
+
+          <div className="text-3xl font-bold">
+            Showflix.
+          </div>
+          <div className="hidden md:flex flex-row gap-x-10">
+            <Link href="/" className="cursor-pointer">
               Home
             </Link>
-          </li>
-          <li>
-            <Link href="/movie" className="flex items-center">
+            <Link href="/movie" className="cursor-pointer">
               Movies
             </Link>
-          </li>
-          <li>
-            <Link href="/tv-show" className="flex items-center">
-               Tv Shows
-            </Link>
-          </li>
-          <li>
-            <Link href="/movie/upcoming" className="flex items-center">
-               Upcoming
-            </Link>
-          </li>
-          <div className="relative flex flex-row w-4/12 max-w-sm items-center justify-end gap-1.5">
-            <MdSearch className='absolute text-black' />
-            <input type="text" placeholder="Search" className="px-2 rounded-sm"/>
-          </div>
-        </ul>
-      </div>
-
-      {/* mobile */}
-      <div className="lg:hidden flex justify-between items-center">
-        <Link href="/" className="text-2xl font-bold text-white">
-         SHOWFLIX.
-        </Link>
-        <ul
-          onClick={() => setNav(!nav)}
-          className={`absolute top-[74px] z-20 bg-black items-center w-full left-0 py-10 bg-red text-white h-full ${
-            nav ? "block" : "hidden"
-          }`}
-        >
-          <div className="flex flex-col h-96 bg-black text-lg items-center justify-between">
-            <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/movie">Movies</Link>
-            </li>
-
-            <li className="cursor-pointer bg-black text-white p-2 w-32 flex items-center justify-center rounded-full">
-              <Link href="/tv-show" className="flex items-center">
+            <Link href="/tv-show" className="cursor-pointer">
               Tv Shows
-              </Link>
-            </li>
-            <li className="cursor-pointer bg-white text-black p-2 w-32 flex items-center justify-center rounded-full mb-10">
-              <Link href="/movie/upcoming" className="flex items-center">
+            </Link>
+            <Link href="/movie/upcoming" className="cursor-pointer">
               Upcoming
-              </Link>
-            </li>
+            </Link>
           </div>
-        </ul>
-        <div className="lg:hidden text-white bg-black block text-2xl" onClick={() => setNav(!nav)}>
-          {!nav ? <CiMenuBurger /> : <TfiClose />}
+          <div className="relative hidden md:flex flex-row  items-center justify-end">
+            <MdSearch className='absolute text-black mr-2' />
+            <input type="text" placeholder="Search" className="px-3 placeholder:text-black rounded-sm" />
+          </div>
+        </div>
+
+        {/* Mobile Screens */}
+        <div className="md:hidden flex flex-row">
+          <div className="flex flex-row gap-x-4">
+            <button onClick={handleToggle}>
+              {isToggle ? (
+                <IoCloseSharp className="text-3xl text-white" />
+              ) : (
+                <IoMenuOutline className="text-3xl text-white" />
+              )}
+            </button>
+          </div>
+          {isToggle && (
+            <div
+              className="fixed top-0 right-0 h-full  w-full bg-black text-white z-10 flex flex-col justify-start items-start "
+            >
+              <button onClick={handleToggle} className="absolute top-5 right-5">
+                <IoCloseSharp className="text-3xl" />
+              </button>
+              <div className="mt-20 max-h-screen overflow-y-auto w-full">
+                <div className="flex flex-col gap-10 items-start justify-start font-semibold text-xl px-5">
+                  <Link href="/" onClick={handleToggle} className="cursor-pointer">
+                    Home
+                  </Link>
+                  <Link href="/movie" onClick={handleToggle} className="cursor-pointer">
+                    Movies
+                  </Link>
+                  <Link href="/tv-shows" onClick={handleToggle} className="cursor-pointer">
+                    Tv Shows
+                  </Link>
+                  <Link href="/movie/upcoming" onClick={handleToggle} className="cursor-pointer">
+                    Upcoming
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 
