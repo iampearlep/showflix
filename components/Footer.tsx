@@ -15,13 +15,13 @@ const Footer = () => {
               young and talented individuals in the field of technology
             </p>
           </div>
-          <div className="md:w-3/12 text-xs flex flex-col gap-y-1 py-2 text-right">
+          <div className="md:w-3/12 text-xs flex flex-col gap-y-1 py-2">
             <h3 className="text-sm font-semibold ">Useful Links</h3>
             <p>Movies</p>
             <p>Tv Shows</p>
             <p>Upcoming</p>
           </div>
-          <div className="md:w-3/12 text-xs flex flex-col gap-y-1 py-2 text-right">
+          <div className="md:w-3/12 text-xs flex flex-col gap-y-1 py-2 ">
             <h3 className="text-sm font-semibold  ">Contact Us</h3>
             <p>Follow us</p>
             <p>
