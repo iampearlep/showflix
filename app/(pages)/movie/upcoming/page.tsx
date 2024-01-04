@@ -21,7 +21,7 @@ export default function Page() {
      },[])
     return (
       <main className='text-white pt-10 md:pt-10 px-10'>
-          <h2 className='text-3xl text-center font-bold py-3'>Upcoming</h2>
+          <h2 className='text-3xl text-center font-bold mt-10 md:mt-20 py-3'>Upcoming</h2>
       <div className='py-20 grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-6'>
       {movies.map((movie: Movie) => (
             <Card key={movie.id} movie={movie} />
