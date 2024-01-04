@@ -1,6 +1,6 @@
 import Image from 'next/image'
 async function getData(slug: any) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_INDIVIDUAL_MOVIE_URL}${slug}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`);
+  const res = await fetch(`https://api.themoviedb.org/3/movie/${slug}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`);
   if (!res.ok) {
     throw new Error('Failed to fetch data')
   }

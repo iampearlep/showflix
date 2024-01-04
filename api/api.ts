@@ -1,15 +1,15 @@
 import axios from 'axios'
 
-const NOW_PLAYING_URL = `${process.env.NEXT_PUBLIC_NOW_PLAYING_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-const POPULAR_URL = `${process.env.NEXT_PUBLIC_POPULAR_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-const TRENDING_URL = `${process.env.NEXT_PUBLIC_TRENDING_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-const TV_SHOWS_URL = `${process.env.NEXT_PUBLIC_TV_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
-const ACTION_URL = `${process.env.NEXT_PUBLIC_ACTION_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=28`
-const COMEDY_URL = `${process.env.NEXT_PUBLIC_ACTION_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=35`
-const HORROR_URL = `${process.env.NEXT_PUBLIC_ACTION_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=27`
-const ROMANCE_URL = `${process.env.NEXT_PUBLIC_ACTION_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=10749`
-const ANIME_URL = `${process.env.NEXT_PUBLIC_ACTION_BASE_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=16`
-const UPCOMING_URL = `${process.env.NEXT_PUBLIC_UPCOMING_URL}?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+const NOW_PLAYING_URL = `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+const POPULAR_URL = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+const TRENDING_URL = `https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+const TV_SHOWS_URL = `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
+const ACTION_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=28`
+const COMEDY_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=35`
+const HORROR_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=27`
+const ROMANCE_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=10749`
+const ANIME_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&with_genres=16`
+const UPCOMING_URL = `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.NEXT_PUBLIC_API_KEY}`
 
 
 export const getNowPlaying = async () => {
