@@ -10,7 +10,11 @@ export default function Movie() {
   const getMovies = async () => {
       try{
         const response = await getPopular()
-        setMovies(response)
+        const processedMovies: Movie[] = response.map((movie: Movie[]) => ({
+          ...movie,
+          isMovie:true
+        }));
+        setMovies(processedMovies)
       } catch(err){
         console.error(err)
       }

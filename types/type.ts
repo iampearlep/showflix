@@ -7,4 +7,5 @@ export interface Movie {
     name: string;
     release_date: string;
     status: string;
+    isMovie: boolean;
   }

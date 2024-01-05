@@ -11,7 +11,11 @@ const TvShows = () => {
     const getMovies = async () => {
         try{
           const response = await getTvShows()
-          setMovies(response)
+          const processedMovies: Movie[] = response.map((movie: Movie[]) => ({
+            ...movie,
+            isMovie: false
+          }));
+          setMovies(processedMovies)
         } catch(err){
           console.error(err)
         }

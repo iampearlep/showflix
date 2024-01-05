@@ -16,7 +16,9 @@ const Navbar = () => {
         <div className="flex mx-auto items-center justify-between text-white w-11/12">
 
           <div className="text-3xl font-bold">
+          <Link href="/" className="cursor-pointer">
             Showflix.
+            </Link>
           </div>
           <div className="hidden md:flex flex-row gap-x-10">
             <Link href="/" className="cursor-pointer">
@@ -25,7 +27,7 @@ const Navbar = () => {
             <Link href="/movie" className="cursor-pointer">
               Movies
             </Link>
-            <Link href="/tv-show" className="cursor-pointer">
+            <Link href="/tv" className="cursor-pointer">
               Tv Shows
             </Link>
             <Link href="/movie/upcoming" className="cursor-pointer">
@@ -64,7 +66,7 @@ const Navbar = () => {
                   <Link href="/movie" onClick={handleToggle} className="cursor-pointer">
                     Movies
                   </Link>
-                  <Link href="/tv-shows" onClick={handleToggle} className="cursor-pointer">
+                  <Link href="/tv" onClick={handleToggle} className="cursor-pointer">
                     Tv Shows
                   </Link>
                   <Link href="/movie/upcoming" onClick={handleToggle} className="cursor-pointer">

@@ -10,7 +10,11 @@ const Anime = () => {
     const getMovies = async () => {
         try{
           const response = await getAction()
-          setMovies(response)
+          const processedMovies: Movie[] = response.map((movie: Movie[]) => ({
+            ...movie,
+            isMovie: true
+          }));
+          setMovies(processedMovies)
         } catch(err){
           console.error(err)
         }
