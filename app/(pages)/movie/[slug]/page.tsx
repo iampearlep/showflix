@@ -9,19 +9,37 @@ async function getData(slug: any) {
 }
 export default async function Page({ params }: { params: { slug: string } }){
   const data = await getData(params.slug)
-  //console.log(data)
+ // console.log(data)
   return (
-    <div className="text-white pt-10 md:pt-16 px-10">
-      <h2 className='text-2xl font-bold mt-10 md:mt-20 pb-20 text-center'>Movie Details</h2>
-     <div className=' flex flex-row-reverse gap-5 mx-auto'> 
-      <div className='w-1/2 flex flex-col justify-center items-start'> 
-        <h2 className='text-2xl font-bold '>{data.title}</h2>
+   <div>
+     <div className='w-full h-screen absolute'>
+      <Image src={`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`} height={750} width={500} priority={true}  alt='' className='w-full h-full brightness-50 blur-sm'/>
+      </div>
+     <div className="text-white pt-10 pb-10 px-5 md:pt-12 md:pb-24 md:px-10 relative z-10">
+    <h2 className='text-2xl font-bold mt-10 md:mt-20 pb-14 text-center'>Movie Details</h2>
+     <div className=' flex flex-col-reverse md:flex-row-reverse gap-5 mx-auto'> 
+      <div className='w-full md:w-1/2 flex flex-col justify-center gap-y-3 items-start'> 
+        <h2 className='text-2xl font-bold'>{data.original_title}</h2>
+        <div className='flex flex-row flex-wrap gap-x-5'>
+          {data.genres.map((genre: any ) => {
+            return <p key={genre.id} className='text-xs border border-yellow-800 px-4 py-2 rounded-full'>{genre.name}</p>
+          })}
+        </div>
+        <div className='flex flex-row gap-x-5'>
+          <p className='text-xs'><span className='text-gray-400'>Runtime:</span> {data.runtime} min</p>
+          <p className='text-xs'><span className='text-gray-400'>Release Date:</span> {data.release_date}</p>
+        </div>
       <p>{data.overview}</p>
+      <div className='flex flex-row gap-x-5'>
+        <p className='text-xs'><span className='text-gray-400'>Vote Average:</span> {data.vote_average}</p>
+        <p className='text-xs'><span className='text-gray-400'>Vote Count:</span> {data.vote_count}</p>
+      </div>
      </div>
-     <div className='w-2/5 mx-auto'>
-     <Image src={`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`} height={750} width={500} priority={true} layout="responsive" alt='' className=''/>
+     <div className='w-full md:w-2/5  mx-auto'>
+     <Image src={`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`} height={750} width={500} priority={true} alt='' className='w-full h-full'/>
      </div>
-     </div>
+     </div> 
     </div>
+   </div>
   )
 }
