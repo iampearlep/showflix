@@ -1,10 +1,10 @@
 import Link from "next/link";
 const Footer = () => {
   return (
-   <footer>
+   <footer className="pt-16 md:pt-10">
      <div className="px-5 lg:px-10 py-5 text-white">
       <div className=" pt-14 mx-auto flex flex-col justify-center items-center">
-        <div className="flex flex-col md:flex-row gap-x-8 py-8 gap-y-10">
+        <div className="flex flex-col md:flex-row gap-x-8 py-8 gap-y-4 md:gap-y-10">
           <div className="md:w-2/5 text-xs flex flex-col gap-y-1">
           <Link href="/" className="text-3xl text-white font-bold">
            SHOWFLIX.
