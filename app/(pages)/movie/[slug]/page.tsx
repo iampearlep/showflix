@@ -16,7 +16,7 @@ export default async function Page({ params }: { params: { slug: string } }){
       <Image src={`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`} height={750} width={500} priority={true}  alt='' className='w-full h-full brightness-50 blur-sm'/>
       </div>
      <div className="text-white pt-7 pb-10 px-5 md:pt-12 md:pb-24 md:px-10 relative z-10">
-    <h2 className='text-2xl font-bold mt-7 md:mt-20 pb-14 text-center'>Movie Details</h2>
+    <h2 className='text-2xl font-bold mt-10 md:mt-20 pb-7 md:pb-14 text-center'>Movie Details</h2>
      <div className=' flex flex-col-reverse md:flex-row-reverse gap-5 mx-auto'> 
       <div className='w-full md:w-1/2 flex flex-col justify-center gap-y-2 items-start'> 
         <h2 className='text-2xl font-bold'>{data.original_title}</h2>
