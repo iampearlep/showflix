@@ -20,7 +20,7 @@ export default async function Page({ params }: { params: { slug: string } }){
      <div className=' flex flex-col-reverse md:flex-row-reverse gap-5 mx-auto'> 
       <div className='w-full md:w-1/2 flex flex-col justify-center gap-y-3 items-start'> 
         <h2 className='text-2xl font-bold'>{data.original_title}</h2>
-        <div className='flex flex-row flex-wrap gap-x-5'>
+        <div className='flex flex-row flex-wrap gap-y-3 gap-x-5'>
           {data.genres.map((genre: any ) => {
             return <p key={genre.id} className='text-xs border border-yellow-800 px-4 py-2 rounded-full'>{genre.name}</p>
           })}
