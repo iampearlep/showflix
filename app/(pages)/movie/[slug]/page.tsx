@@ -11,7 +11,7 @@ export default async function Page({ params }: { params: { slug: string } }){
   const data = await getData(params.slug)
  // console.log(data)
   return (
-   <div className='h-[600px] overflow-hidden'>
+   <div className='h-[600px]'>
      <div className='w-full h-screen absolute'>
       <Image src={`https://image.tmdb.org/t/p/w1280/${data.backdrop_path}`} height={750} width={500} priority={true}  alt='' className='w-full h-full brightness-50 blur-sm'/>
       </div>
