@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { IoMenuOutline, IoCloseSharp } from "react-icons/io5";
 import Link from "next/link";
-import { MdSearch } from "react-icons/md";
+import Search from "./Search";
 
 const Navbar = () => {
   const [isToggle, setIsToggle] = useState(false);
@@ -35,8 +35,7 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="relative hidden md:flex flex-row  items-center justify-end">
-            <MdSearch className='absolute text-black mr-2' />
-            <input type="text" placeholder="Search" className="px-3 placeholder:text-black rounded-sm" />
+           <Search  />
           </div>
         </div>
 
@@ -72,6 +71,7 @@ const Navbar = () => {
                   <Link href="/movie/upcoming" onClick={handleToggle} className="cursor-pointer">
                     Upcoming
                   </Link>
+                  <Search  />
                 </div>
               </div>
             </div>
